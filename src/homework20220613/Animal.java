@@ -1,4 +1,14 @@
 package homework20220613;
 
-public class Animal {
+public abstract class Animal implements IAnimal {
+    protected String name;
+    protected String color;
+    protected int age;
+
+    public Animal(String name, String color, int age) {
+        this.name = name;
+        this.color = color;
+        this.age = age;
+    }
+
 }
