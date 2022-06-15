@@ -17,5 +17,6 @@ public class ProcessingOfAnimals {
             System.out.println(animal.run(150));
             System.out.println(animal.swim(15));
         }
+        System.out.println("Total animals: " + Animal.counter + ".");
     }
 }
