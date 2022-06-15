@@ -10,5 +10,4 @@ public abstract class Animal implements IAnimal {
         this.color = color;
         this.age = age;
     }
-
 }

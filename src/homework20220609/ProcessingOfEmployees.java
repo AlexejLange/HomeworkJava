@@ -1,5 +1,11 @@
 package homework20220609;
 
+/**
+ * Java Pro. Homework #1
+ *  * @author Alexej Lange
+ *  * @version 11 Jun 2022
+ */
+
 public class ProcessingOfEmployees {
     public static void main(String[] args) {
         Employee[] employeeArray = new Employee[5];

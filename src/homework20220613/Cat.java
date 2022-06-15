@@ -6,12 +6,25 @@ public class Cat extends Animal {
     }
 
     @Override
+    public String toString() {
+        return "Cat: " +
+                "name " + name  +
+                ", color " + color +
+                ", age " + age +
+                '.';
+    }
+
+    @Override
     public String run(int distance) {
-        return null;
+        if (distance >= 0 && distance <= 200) {
+            return "The cat run " + distance + " meter.";
+        } else {
+            return "The cat can not run this distance.";
+        }
     }
 
     @Override
     public String swim(int distance) {
-        return null;
+        return "The cat can not swim.";
     }
 }
