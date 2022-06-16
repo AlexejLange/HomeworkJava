@@ -2,13 +2,13 @@ package homework20220609;
 
 public class Employee {
     private final String name;
-    private final String position;
+    private final Position position;
     private final String email;
     private final String phone;
     private final int salary;
     private final int age;
 
-    public Employee(String name, String position,
+    public Employee(String name, Position position,
                     String email, String phone,
                     int salary, int age) {
         this.name = name;
