@@ -1,4 +1,4 @@
-package homework20220616;
+package homework3;
 
 /**
  * Java Pro. Homework #3

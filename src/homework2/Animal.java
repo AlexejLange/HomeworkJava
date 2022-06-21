@@ -1,4 +1,4 @@
-package homework20220613;
+package homework2;
 
 public abstract class Animal implements IAnimal {
     protected int runLimit;

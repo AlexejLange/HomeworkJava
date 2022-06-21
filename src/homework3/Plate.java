@@ -1,4 +1,4 @@
-package homework20220616;
+package homework3;
 
 public class Plate {
     protected int food;

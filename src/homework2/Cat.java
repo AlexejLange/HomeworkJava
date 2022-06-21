@@ -1,4 +1,4 @@
-package homework20220613;
+package homework2;
 
 public class Cat extends Animal {
     public Cat(int runLimit) {

@@ -1,4 +1,4 @@
-package homework20220613;
+package homework2;
 
 public class Dog extends Animal {
     public Dog(int runLimit, int swimLimit) {

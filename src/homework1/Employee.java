@@ -1,4 +1,4 @@
-package homework20220609;
+package homework1;
 
 public class Employee {
     private final String name;
