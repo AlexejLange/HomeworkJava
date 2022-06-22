@@ -9,6 +9,9 @@ public class ProcessingRubberArray {
         array.add(20);
         System.out.println(array.size() + ": " + array);
         System.out.println(array.get(2));
+        System.out.println(array.getMax());
+        System.out.println(array.getMin());
+        System.out.println(array.average());
         array.remove(0);
         System.out.println(array.size() + ": " + array);
         array.remove(2);
@@ -17,5 +20,9 @@ public class ProcessingRubberArray {
         System.out.println(array.size() + ": " + array);
         array.remove(0);
         System.out.println(array.size() + ": " + array);
+        System.out.println(array.get(2));
+        System.out.println(array.getMax());
+        System.out.println(array.getMin());
+        System.out.println(array.average());
     }
 }
