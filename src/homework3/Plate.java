@@ -7,9 +7,12 @@ public class Plate {
         this.food = food;
     }
 
-    public void decreaseFood(int partFood) {
-        if ((this.food - partFood) >= 0) {
+    public boolean decreaseFood(int partFood) {
+        if (this.food >= partFood) {
             this.food -= partFood;
+            return true;
+        } else {
+            return false;
         }
     }
 

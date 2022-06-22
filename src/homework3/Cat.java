@@ -5,13 +5,13 @@ public class Cat {
     protected final int appetite;
     protected boolean satiety;
 
-    public Cat(String name, int appetite, boolean satiety) {
+    public Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
-        this.satiety = satiety;
+        satiety = false;
     }
 
-    public static boolean checkEat(Plate plate, int appetite) {
+    public boolean checkEat(Plate plate, int appetite) {
         return plate.food >= appetite;
     }
 
@@ -20,9 +20,8 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        if (!this.satiety && checkEat(plate,this.appetite)) {
-            plate.decreaseFood(appetite);
-            this.satiety = true;
+        if (!this.satiety) {
+            satiety = plate.decreaseFood(appetite);
         }
     }
 
