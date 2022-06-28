@@ -1,5 +1,11 @@
 package homework4;
 
+/**
+ * Java Pro. Homework #4
+ * @author Alexej Lange
+ * @version 22 Jun 2022
+ */
+
 public class ProcessingRubberArray {
     public static void main(String[] args) {
         RubberArray array = new RubberArray();

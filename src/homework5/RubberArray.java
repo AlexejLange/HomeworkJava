@@ -1,56 +1,55 @@
 package homework5;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
-public class RubberArray {
-    private int[] array;
+public class RubberArray implements Iterable {
+    private int[] array = new int[0];
 
-
-    public void add(int value) {
-        if (array == null) {
-            array = new int[1];
-            array[0] = value;
-        } else {
-            int[] newArray = new int[array.length + 1];
-            System.arraycopy(array, 0, newArray, 0, array.length);
-            newArray[array.length] = value;
-            array = newArray;
-        }
+    public RubberArray(int... arrayValue){
+        addAll(arrayValue);
     }
 
-    public Integer get(int index) {
-        if (array != null) {
-            if (index < array.length) {
-                return array[index];
-            } else {
-                return null;
-            }
-        } else{
-            return null;
-        }
+    public void addAll(int... arrayValue) {
+        int[] newArray = new int[array.length + arrayValue.length];
+        System.arraycopy(array, 0, newArray, 0, array.length);
+        System.arraycopy(arrayValue, 0, newArray, array.length, arrayValue.length);
+        array = newArray;
+    }
+
+    public void add (int value) {
+        addAll(value);
+    }
+
+    public int get(int index) {
+        return array[index];
+    }
+
+    public void set(int index, int value) {
+        array[index] = value;
     }
 
     public int size() {
-        return array == null ? 0 : array.length;
+        return array.length;
     }
 
-    public void remove(int index) {
-        if (array != null) {
-            if (index < array.length) {
-                int[] newArray = new int[array.length - 1];
-                System.arraycopy(array, 0, newArray, 0, index);
-                System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
-                array = newArray;
-            }
+    public boolean remove(int index) {
+        if (index < array.length) {
+            int[] newArray = new int[array.length - 1];
+            System.arraycopy(array, 0, newArray, 0, index);
+            System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
+            array = newArray;
+            return true;
         }
+        return false;
     }
 
     public Integer getMax() {
         if (array.length > 0) {
             int maxValue = array[0];
-            for (int i = 1; i < array.length; i++) {
-                if (array[i] > maxValue) {
-                    maxValue = array[i];
+            for (int i : array) {
+                if (i > maxValue) {
+                    maxValue = i;
                 }
             }
             return maxValue;
@@ -62,9 +61,9 @@ public class RubberArray {
     public Integer getMin() {
         if (array.length > 0) {
             int minValue = array[0];
-            for (int i = 1; i < array.length; i++) {
-                if (array[i] < minValue) {
-                    minValue = array[i];
+            for (int i : array) {
+                if (i < minValue) {
+                    minValue = i;
                 }
             }
             return minValue;
@@ -76,8 +75,8 @@ public class RubberArray {
     public Double average() {
         if (array.length > 0) {
             double sum = array[0];
-            for (int i = 1; i < array.length; i++) {
-                sum += array[i];
+            for (int i : array) {
+                sum += i;
             }
             return sum / array.length;
         } else {
@@ -87,6 +86,25 @@ public class RubberArray {
 
     @Override
     public String toString() {
-        return array == null ? "[]" : Arrays.toString(array);
+        return Arrays.toString(array);
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new Itr();
+    }
+
+    private class Itr implements Iterator {
+        int cursor = 0;
+
+        @Override
+        public boolean hasNext() {
+            return cursor < array.length;
+        }
+
+        @Override
+        public Object next() {
+            return array[cursor++];
+        }
     }
 }
