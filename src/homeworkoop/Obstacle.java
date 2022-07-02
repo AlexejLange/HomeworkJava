@@ -8,4 +8,8 @@ public class Obstacle {
         this.length = length;
         this.height = height;
     }
+
+    public boolean move(int distance) {
+        return true;
+    }
 }

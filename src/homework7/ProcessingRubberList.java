@@ -7,7 +7,7 @@ public class ProcessingRubberList {
         rl.add(2);
         rl.add(5);
         System.out.println(rl);
-        rl.remove(0);
+        System.out.println(rl.remove(2));
         System.out.println(rl);
         for (Object item : rl) {
             System.out.println(item);

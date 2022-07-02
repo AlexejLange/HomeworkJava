@@ -10,5 +10,9 @@ public class AthleteRunAndJump {
     public static void main(String[] args) {
         IAthlete[] athletes = {new Human(), new Cat(),new Robot()};
         Obstacle[] obstacles = {new JoggingTrack(10), new Wall(2)};
+
+        for (IAthlete athlete : athletes) {
+            System.out.println(athlete);
+        }
     }
 }

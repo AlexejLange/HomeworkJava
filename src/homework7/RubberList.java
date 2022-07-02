@@ -105,7 +105,7 @@ public class RubberList implements Iterable {
 
     @Override
     public String toString() {
-        StringBuffer sb = new StringBuffer("[");
+        StringBuilder sb = new StringBuilder("[");
         Node cursor = first;
         while (cursor != null) {
             sb.append(cursor.item);
@@ -138,7 +138,7 @@ public class RubberList implements Iterable {
         }
     }
 
-    protected class Node {
+    protected static class Node {
         int item;
         Node next;
         Node prev;
