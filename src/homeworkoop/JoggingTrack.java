@@ -1,7 +1,7 @@
 package homeworkoop;
 
 public class JoggingTrack extends Obstacle {
-    private int length;
+    private final int length;
 
     public JoggingTrack(int length) {
         this.length = length;

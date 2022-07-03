@@ -1,13 +1,13 @@
 package homeworkoop;
 
 public class Wall extends Obstacle {
-    private int height;
+    private final float height;
 
-    public Wall(int height) {
+    public Wall(float height) {
         this.height = height;
     }
 
-    public int getHeight() {
+    public float getHeight() {
         return height;
     }
 

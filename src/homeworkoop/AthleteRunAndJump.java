@@ -3,24 +3,28 @@ package homeworkoop;
 /**
  * Java Pro. Homework OOP
  * @author Alexej Lange
- * @version 30 Jun 2022
+ * @version 03 Jul 2022
  */
 
 public class AthleteRunAndJump {
     public static void main(String[] args) {
         IAthlete[] athletes = {
-                new Human(10, 2),
-                new Cat(10, 2),
-                new Robot(10,2)
+                new Human("Anton", 3000, 1.5f),
+                new Human("Anna", 2000, 1.6f),
+                new Cat("Tom",1000, 3),
+                new Robot("Terminator",10000,5.9f)
         };
         Obstacle[] obstacles = {
-                new JoggingTrack(10),
-                new Wall(2)
+                new JoggingTrack(1500),
+                new Wall(1.6f)
         };
 
-        for (IAthlete athlete : athletes)
+        for (IAthlete athlete : athletes) {
             for (Obstacle obstacle : obstacles) {
-                obstacle.move(athlete);
+                if (!obstacle.move(athlete)) {
+                    break;
+                }
             }
+        }
     }
 }

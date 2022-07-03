@@ -1,22 +1,19 @@
 package homeworkoop;
 
 public class Human implements IAthlete {
-    private int runLimit;
-    private int jumpLimit;
+    private final String name;
+    private final int runLimit;
+    private final float jumpLimit;
 
-    public Human(int runLimit, int jumpLimit) {
+    public Human(String name, int runLimit, float jumpLimit) {
+        this.name = name;
         this.runLimit = runLimit;
         this.jumpLimit = jumpLimit;
     }
 
     @Override
-    public void run() {
-        System.out.println("The Human is running.");
-    }
-
-    @Override
-    public void jump() {
-        System.out.println("The Human is jumping.");
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -25,7 +22,17 @@ public class Human implements IAthlete {
     }
 
     @Override
-    public int getJumpLimit() {
+    public float getJumpLimit() {
         return this.jumpLimit;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("The Human " + getName() + " is running.");
+    }
+
+    @Override
+    public void jump() {
+        System.out.println("The Human " + getName() + " is jumping.");
     }
 }
