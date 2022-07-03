@@ -1,6 +1,9 @@
 package homeworkoop;
 
 public interface IAthlete {
-    String run(int distance);
-    String jump(int distance);
+    void run();
+    void jump();
+
+    int getRunLimit();
+    int getJumpLimit();
 }

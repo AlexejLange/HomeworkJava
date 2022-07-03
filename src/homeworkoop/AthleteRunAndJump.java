@@ -8,11 +8,19 @@ package homeworkoop;
 
 public class AthleteRunAndJump {
     public static void main(String[] args) {
-        IAthlete[] athletes = {new Human(), new Cat(),new Robot()};
-        Obstacle[] obstacles = {new JoggingTrack(10), new Wall(2)};
+        IAthlete[] athletes = {
+                new Human(10, 2),
+                new Cat(10, 2),
+                new Robot(10,2)
+        };
+        Obstacle[] obstacles = {
+                new JoggingTrack(10),
+                new Wall(2)
+        };
 
-        for (IAthlete athlete : athletes) {
-            System.out.println(athlete);
-        }
+        for (IAthlete athlete : athletes)
+            for (Obstacle obstacle : obstacles) {
+                obstacle.move(athlete);
+            }
     }
 }
