@@ -27,12 +27,12 @@ public class Cat implements IAthlete {
     }
 
     @Override
-    public void run() {
-        System.out.println("The Cat " + getName() + " is running.");
+    public String run(int runLimit) {
+        return "The Cat " + getName() + " can run " + runLimit + " m.";
     }
 
     @Override
-    public void jump() {
-        System.out.println("The Cat " + getName() + " is jumping.");
+    public String jump(float jumpLimit) {
+        return "The Cat " + getName() + " can jump " + jumpLimit + " m.";
     }
 }

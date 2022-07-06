@@ -1,10 +1,9 @@
 package homeworkoop;
 
 public interface IAthlete {
-    void run();
-    void jump();
+    String run(int limit);
+    String jump(float limit);
     String getName();
     int getRunLimit();
     float getJumpLimit();
-
 }

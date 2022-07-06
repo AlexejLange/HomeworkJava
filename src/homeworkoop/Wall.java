@@ -1,6 +1,6 @@
 package homeworkoop;
 
-public class Wall extends Obstacle {
+public class Wall implements IObstacle {
     private final float height;
 
     public Wall(float height) {
@@ -14,7 +14,7 @@ public class Wall extends Obstacle {
     @Override
     public boolean move(IAthlete athlete) {
         System.out.println("The wall " + this.height + " meter height.");
-        athlete.jump();
+        System.out.println(athlete.jump(athlete.getJumpLimit()));
         if (athlete.getJumpLimit() >= getHeight()) {
             System.out.println("Jump successfully!");
             return true;

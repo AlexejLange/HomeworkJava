@@ -1,6 +1,6 @@
 package homeworkoop;
 
-public class JoggingTrack extends Obstacle {
+public class JoggingTrack implements IObstacle {
     private final int length;
 
     public JoggingTrack(int length) {
@@ -14,7 +14,7 @@ public class JoggingTrack extends Obstacle {
     @Override
     public boolean move(IAthlete athlete) {
         System.out.println("The jogging track " + this.length + " meter length.");
-        athlete.run();
+        System.out.println(athlete.run(athlete.getRunLimit()));
         if (athlete.getRunLimit() >= getLength()) {
             System.out.println("Run successfully!");
             return true;

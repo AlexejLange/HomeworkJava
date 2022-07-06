@@ -14,13 +14,13 @@ public class AthleteRunAndJump {
                 new Cat("Tom",1000, 3),
                 new Robot("Terminator",10000,5.9f)
         };
-        Obstacle[] obstacles = {
+        IObstacle[] obstacles = {
                 new JoggingTrack(1500),
                 new Wall(1.6f)
         };
 
         for (IAthlete athlete : athletes) {
-            for (Obstacle obstacle : obstacles) {
+            for (IObstacle obstacle : obstacles) {
                 if (!obstacle.move(athlete)) {
                     break;
                 }

@@ -27,12 +27,12 @@ public class Human implements IAthlete {
     }
 
     @Override
-    public void run() {
-        System.out.println("The Human " + getName() + " is running.");
+    public String run(int runLimit) {
+        return "The Human " + getName() + " can run " + runLimit + " m.";
     }
 
     @Override
-    public void jump() {
-        System.out.println("The Human " + getName() + " is jumping.");
+    public String jump(float jumpLimit) {
+        return "The Human " + getName() + " can jump " + jumpLimit + " m.";
     }
 }

@@ -27,12 +27,12 @@ public class Robot implements IAthlete {
     }
 
     @Override
-    public void run() {
-        System.out.println("The Robot " + getName() + " is running.");
+    public String run(int runLimit) {
+        return "The Robot " + getName() + " can run " + runLimit + " m.";
     }
 
     @Override
-    public void jump() {
-        System.out.println("The Robot " + getName() + " is jumping.");
+    public String jump(float jumpLimit) {
+        return "The Robot " + getName() + " can jump " + jumpLimit + " m.";
     }
 }
