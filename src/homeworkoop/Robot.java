@@ -17,22 +17,25 @@ public class Robot implements IAthlete {
     }
 
     @Override
-    public int getRunLimit() {
-        return this.runLimit;
+    public boolean run(int distance) {
+        System.out.printf(getName() + " %s run %d m.%n",
+                distance <= runLimit? "successfully" : "didn't", distance);
+        return distance <= runLimit;
     }
 
     @Override
-    public float getJumpLimit() {
-        return this.jumpLimit;
+    public boolean jump(float height) {
+        System.out.printf(getName() + " %s jump %f m.%n",
+                height <= jumpLimit? "successfully" : "didn't", height);
+        return height <= jumpLimit;
     }
 
     @Override
-    public String run(int runLimit) {
-        return "The Robot " + getName() + " can run " + runLimit + " m.";
-    }
-
-    @Override
-    public String jump(float jumpLimit) {
-        return "The Robot " + getName() + " can jump " + jumpLimit + " m.";
+    public String toString() {
+        return "Robot{" +
+                "name='" + name + '\'' +
+                ", runLimit=" + runLimit +
+                ", jumpLimit=" + jumpLimit +
+                '}';
     }
 }

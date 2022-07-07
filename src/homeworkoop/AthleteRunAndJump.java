@@ -3,7 +3,7 @@ package homeworkoop;
 /**
  * Java Pro. Homework OOP
  * @author Alexej Lange
- * @version 03 Jul 2022
+ * @version 07 Jul 2022
  */
 
 public class AthleteRunAndJump {
@@ -20,6 +20,7 @@ public class AthleteRunAndJump {
         };
 
         for (IAthlete athlete : athletes) {
+            System.out.println(athlete);
             for (IObstacle obstacle : obstacles) {
                 if (!obstacle.move(athlete)) {
                     break;
