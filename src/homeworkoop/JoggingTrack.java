@@ -9,6 +9,6 @@ public class JoggingTrack implements IObstacle {
 
     @Override
     public boolean move(IAthlete athlete) {
-        return athlete.run(length);
+        return athlete.run(length, athlete.getRunLimit());
     }
 }

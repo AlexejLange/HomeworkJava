@@ -17,17 +17,23 @@ public class Human implements IAthlete {
     }
 
     @Override
-    public boolean run(int distance) {
-        System.out.printf(getName() + " %s run %d m.%n",
-                distance <= runLimit? "successfully" : "didn't", distance);
-        return distance <= runLimit;
+    public int getRunLimit() {
+        return runLimit;
     }
 
     @Override
-    public boolean jump(float height) {
-        System.out.printf(getName() + " %s jump %f m.%n",
-                height <= jumpLimit? "successfully" : "didn't", height);
-        return height <= jumpLimit;
+    public float getJumpLimit() {
+        return jumpLimit;
+    }
+
+    @Override
+    public boolean run(int distance, int runLimit) {
+        return IAthlete.super.run(distance, runLimit);
+    }
+
+    @Override
+    public boolean jump(float height, float jumpLimit) {
+        return IAthlete.super.jump(height, jumpLimit);
     }
 
     @Override

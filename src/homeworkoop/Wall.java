@@ -9,6 +9,6 @@ public class Wall implements IObstacle {
 
     @Override
     public boolean move(IAthlete athlete) {
-       return athlete.jump(height);
+       return athlete.jump(height, athlete.getJumpLimit());
     }
 }
