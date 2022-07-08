@@ -1,5 +1,11 @@
 package homework9;
 
+/**
+ * Java Pro. Homework #4
+ * @author Alexej Lange
+ * @version 08 Jul 2022
+ */
+
 import java.util.Scanner;
 
 public class UseEmployeesDatabase {
