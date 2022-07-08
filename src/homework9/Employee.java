@@ -1,5 +1,7 @@
 package homework9;
 
+import java.util.Scanner;
+
 public class Employee {
     private final String name;
     private final String position;
@@ -11,6 +13,15 @@ public class Employee {
         this.position = position;
         this.salary = salary;
         this.age = age;
+    }
+
+    public static Employee createEmployee() {
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.next();
+        String position = scanner.next();
+        int salary = scanner.nextInt();
+        int age = scanner.nextInt();
+        return new Employee(name, position, salary, age);
     }
 
     public String getName() {

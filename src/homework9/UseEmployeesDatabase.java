@@ -9,8 +9,7 @@ public class UseEmployeesDatabase {
         database.init();
 
         boolean exit = false;
-        String name, position, oldName;
-        int salary, age;
+        String name;
 
         while (!exit) {
             System.out.println("db> ");
@@ -21,23 +20,14 @@ public class UseEmployeesDatabase {
                     break;
                 case "c":
                     System.out.println("create> ");
-                    name = scanner.next();
-                    position = scanner.next();
-                    salary = scanner.nextInt();
-                    age = scanner.nextInt();
-                    database.create(new Employee(name, position, salary, age));
+                    database.create(Employee.createEmployee());
                     break;
                 case "r":
                     System.out.println(database.read());
                     break;
                 case "u":
                     System.out.println("update> ");
-                    oldName = scanner.next();
-                    name = scanner.next();
-                    position = scanner.next();
-                    salary = scanner.nextInt();
-                    age = scanner.nextInt();
-                    database.update(oldName, new Employee(name, position, salary, age));
+                    database.create(Employee.createEmployee());
                     break;
                 case "d":
                     System.out.println("delete> ");
