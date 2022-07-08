@@ -13,13 +13,13 @@ public class Employee {
         this.age = age;
     }
 
-/*    public String getName() {
+    public String getName() {
         return name;
     }
 
     public String getPosition() {
         return position;
-    }*/
+    }
 
     @Override
     public String toString() {
