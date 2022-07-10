@@ -1,6 +1,7 @@
 package homework8;
 
 import homework5.RubberArray;
+import homework7.RubberList;
 
 import java.util.Iterator;
 
@@ -23,6 +24,25 @@ public class UseRubberArrayAndListE {
         while (iteratorStr.hasNext()) {
             System.out.print(iteratorStr.next() + " ");
         }
+        System.out.println();
         System.out.println("-------------------------------");
+        RubberListE<Integer> rl = new RubberListE<>();
+        rl.add(1);
+        rl.add(2);
+        rl.add(5);
+        System.out.println(rl);
+        for (Object item : rl) {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+        RubberListE<String> rlStr = new RubberListE<>();
+        rlStr.add("A");
+        rlStr.add("B");
+        rlStr.add("C");
+        System.out.println(rlStr);
+        rlStr.remove(1);
+        for (Object item : rlStr) {
+            System.out.print(item + " ");
+        }
     }
 }

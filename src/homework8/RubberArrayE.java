@@ -54,7 +54,7 @@ public class RubberArrayE<E> implements Iterable<E>{
         return new Itr();
     }
 
-    private class Itr implements Iterator {
+    private class Itr implements Iterator<E> {
         int cursor = 0;
 
         @Override
