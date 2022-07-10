@@ -27,16 +27,6 @@ public class Human implements IAthlete {
     }
 
     @Override
-    public boolean run(int distance, int runLimit) {
-        return IAthlete.super.run(distance, runLimit);
-    }
-
-    @Override
-    public boolean jump(float height, float jumpLimit) {
-        return IAthlete.super.jump(height, jumpLimit);
-    }
-
-    @Override
     public String toString() {
         return "Human{" +
                 "name='" + name + '\'' +
