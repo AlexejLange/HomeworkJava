@@ -3,29 +3,29 @@ package homework8;
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class RubberArrayE {
-    private int[] array = new int[0];
+public class RubberArrayE<E> implements Iterable<E>{
+    private Object[] array = new Object[0];
 
-    public RubberArrayE(int... arrayValue){
+    public RubberArrayE(E... arrayValue){
         addAll(arrayValue);
     }
 
-    public void addAll(int... arrayValue) {
-        int[] newArray = new int[array.length + arrayValue.length];
+    public void addAll(E... arrayValue) {
+        Object[] newArray = new Object[array.length + arrayValue.length];
         System.arraycopy(array, 0, newArray, 0, array.length);
         System.arraycopy(arrayValue, 0, newArray, array.length, arrayValue.length);
         array = newArray;
     }
 
-    public void add (int value) {
+    public void add (E value) {
         addAll(value);
     }
 
-    public int get(int index) {
-        return array[index];
+    public E get(int index) {
+        return (E) array[index];
     }
 
-    public void set(int index, int value) {
+    public void set(int index, E value) {
         array[index] = value;
     }
 
@@ -35,7 +35,7 @@ public class RubberArrayE {
 
     public boolean remove(int index) {
         if (index < array.length) {
-            int[] newArray = new int[array.length - 1];
+            Object[] newArray = new Object[array.length - 1];
             System.arraycopy(array, 0, newArray, 0, index);
             System.arraycopy(array, index + 1, newArray, index, array.length - index - 1);
             array = newArray;
@@ -44,53 +44,13 @@ public class RubberArrayE {
         return false;
     }
 
-    public Integer getMax() {
-        if (array.length > 0) {
-            int maxValue = array[0];
-            for (int i : array) {
-                if (i > maxValue) {
-                    maxValue = i;
-                }
-            }
-            return maxValue;
-        } else {
-            return null;
-        }
-    }
-
-    public Integer getMin() {
-        if (array.length > 0) {
-            int minValue = array[0];
-            for (int i : array) {
-                if (i < minValue) {
-                    minValue = i;
-                }
-            }
-            return minValue;
-        } else {
-            return null;
-        }
-    }
-
-    public Double average() {
-        if (array.length > 0) {
-            double sum = array[0];
-            for (int i : array) {
-                sum += i;
-            }
-            return sum / array.length;
-        } else {
-            return null;
-        }
-    }
-
     @Override
     public String toString() {
         return Arrays.toString(array);
     }
 
 //    @Override
-    public Iterator iterator() {
+    public Iterator<E> iterator() {
         return new Itr();
     }
 
@@ -103,8 +63,8 @@ public class RubberArrayE {
         }
 
         @Override
-        public Object next() {
-            return array[cursor++];
+        public E next() {
+            return (E) array[cursor++];
         }
     }
 }
