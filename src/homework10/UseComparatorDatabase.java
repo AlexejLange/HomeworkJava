@@ -1,17 +1,17 @@
-package homework9;
+package homework10;
 
 /**
- * Java Pro. Homework #9
+ * Java Pro. Homework #10
  * @author Alexej Lange
- * @version 08 Jul 2022
+ * @version 14 Jul 2022
  */
 
 import java.util.Scanner;
 
-public class UseEmployeesDatabase {
+public class UseComparatorDatabase {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Database database = new Database();
+        ComparatorDatabase database = new ComparatorDatabase();
         database.init();
 
         boolean exit = false;
@@ -26,14 +26,14 @@ public class UseEmployeesDatabase {
                     break;
                 case "c":
                     System.out.println("create> ");
-                    database.create(Employee.createEmployee());
+                    database.create(ComparatorEmployee.scanEmployee());
                     break;
                 case "r":
                     System.out.println(database.read());
                     break;
                 case "u":
                     System.out.println("update> ");
-                    database.create(Employee.createEmployee());
+                    database.create(ComparatorEmployee.scanEmployee());
                     break;
                 case "d":
                     System.out.println("delete> ");
