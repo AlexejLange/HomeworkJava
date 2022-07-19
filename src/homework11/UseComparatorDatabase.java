@@ -1,4 +1,4 @@
-package homework10;
+package homework11;
 
 /**
  * Java Pro. Homework #10

@@ -1,4 +1,4 @@
-package homeworkoop;
+package homework10;
 
 /**
  * Java Pro. Homework OOP

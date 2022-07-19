@@ -1,11 +1,11 @@
-package homeworkoop;
+package homework10;
 
-public class Human implements IAthlete {
+public class Robot implements IAthlete {
     private final String name;
     private final int runLimit;
     private final float jumpLimit;
 
-    public Human(String name, int runLimit, float jumpLimit) {
+    public Robot(String name, int runLimit, float jumpLimit) {
         this.name = name;
         this.runLimit = runLimit;
         this.jumpLimit = jumpLimit;
@@ -28,7 +28,7 @@ public class Human implements IAthlete {
 
     @Override
     public String toString() {
-        return "Human{" +
+        return "Robot{" +
                 "name='" + name + '\'' +
                 ", runLimit=" + runLimit +
                 ", jumpLimit=" + jumpLimit +

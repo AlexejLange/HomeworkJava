@@ -1,4 +1,4 @@
-package homeworkoop;
+package homework10;
 
 public class Wall implements IObstacle {
     private final float height;
@@ -9,6 +9,6 @@ public class Wall implements IObstacle {
 
     @Override
     public boolean move(IAthlete athlete) {
-       return athlete.jump(height, athlete.getJumpLimit());
+       return athlete.jump(athlete.getName(), height, athlete.getJumpLimit());
     }
 }

@@ -1,4 +1,4 @@
-package homeworkoop;
+package homework10;
 
 public class Cat implements IAthlete {
     private final String name;

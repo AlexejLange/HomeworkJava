@@ -1,4 +1,4 @@
-package homeworkoop;
+package homework10;
 
 public class JoggingTrack implements IObstacle {
     private final int length;
@@ -9,6 +9,6 @@ public class JoggingTrack implements IObstacle {
 
     @Override
     public boolean move(IAthlete athlete) {
-        return athlete.run(length, athlete.getRunLimit());
+        return athlete.run(athlete.getName(), length, athlete.getRunLimit());
     }
 }
