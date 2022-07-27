@@ -55,4 +55,31 @@ public class ComparatorDatabase {
         }
         return sb.toString();
     }
+
+    public void printListComparator() {
+//        Comparator<ComparatorEmployee> comparatorName = new Comparator<ComparatorEmployee>() {
+//            @Override
+//            public int compare(ComparatorEmployee o1, ComparatorEmployee o2) {
+//                return o1.getName().compareTo(o2.getName());
+//            }
+//        };
+        Comparator<ComparatorEmployee> comparatorAge = new Comparator<ComparatorEmployee>() {
+            @Override
+            public int compare(ComparatorEmployee o1, ComparatorEmployee o2) {
+                return o2.getAge().compareTo(o1.getAge());
+            }
+        };
+//        employees.sort(comparatorName);
+        employees.sort(comparatorAge);
+        for (ComparatorEmployee employee : employees) {
+            System.out.println(employee);
+        }
+    }
+
+    public void printListComparable() {
+        Set<ComparatorEmployee> sortList = new TreeSet<>(employees);
+        for (ComparatorEmployee employee : sortList) {
+            System.out.println(employee);
+        }
+    }
 }

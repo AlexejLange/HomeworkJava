@@ -11,7 +11,7 @@ public class InitDatabase {
             new ComparatorEmployee("Joy", "assistant", 750, 23),
             new ComparatorEmployee("Mark", "engineer", 1050, 42),
             new ComparatorEmployee("Karl", "engineer", 1025,38),
-            new ComparatorEmployee( "Elza", "assistant",950,32));
+            new ComparatorEmployee( "Elza", "accountant",950,32));
     }
 
     public static Collection<ComparatorEmployee> getInitData() {

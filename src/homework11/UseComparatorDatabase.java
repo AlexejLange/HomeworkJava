@@ -3,7 +3,7 @@ package homework11;
 /**
  * Java Pro. Homework #10
  * @author Alexej Lange
- * @version 14 Jul 2022
+ * @version 27 Jul 2022
  */
 
 import java.util.Scanner;
@@ -47,6 +47,11 @@ public class UseComparatorDatabase {
                     break;
                 case "p":
                     System.out.println(database.getPositions());
+                    break;
+                case "s":
+                    database.printListComparator();
+                    System.out.println("----------------------------------------------------------------");
+                    database.printListComparable();
                     break;
             }
         }

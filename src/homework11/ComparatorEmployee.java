@@ -2,7 +2,7 @@ package homework11;
 
 import java.util.Scanner;
 
-public class ComparatorEmployee {
+public class ComparatorEmployee implements Comparable<ComparatorEmployee> {
     private final String name;
     private final String position;
     private final int salary;
@@ -28,6 +28,10 @@ public class ComparatorEmployee {
         return name;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
     public String getPosition() {
         return position;
     }
@@ -40,5 +44,10 @@ public class ComparatorEmployee {
                 ", salary=" + salary +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public int compareTo(ComparatorEmployee o) {
+        return this.getName().compareTo(o.getName());
     }
 }
