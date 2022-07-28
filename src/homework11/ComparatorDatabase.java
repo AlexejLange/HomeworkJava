@@ -57,18 +57,8 @@ public class ComparatorDatabase {
     }
 
     public void printListComparator() {
-//        Comparator<ComparatorEmployee> comparatorName = new Comparator<ComparatorEmployee>() {
-//            @Override
-//            public int compare(ComparatorEmployee o1, ComparatorEmployee o2) {
-//                return o1.getName().compareTo(o2.getName());
-//            }
-//        };
-        Comparator<ComparatorEmployee> comparatorAge = new Comparator<ComparatorEmployee>() {
-            @Override
-            public int compare(ComparatorEmployee o1, ComparatorEmployee o2) {
-                return o2.getAge().compareTo(o1.getAge());
-            }
-        };
+//        Comparator<ComparatorEmployee> comparatorName = (o1, o2) -> o1.getName().compareTo(o2.getName());
+        Comparator<ComparatorEmployee> comparatorAge = (o1, o2) -> o2.getAge().compareTo(o1.getAge());
 //        employees.sort(comparatorName);
         employees.sort(comparatorAge);
         for (ComparatorEmployee employee : employees) {

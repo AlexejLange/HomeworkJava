@@ -38,6 +38,7 @@ public class SwingCollections extends JFrame {
         JButton setButton = new JButton("Set");
         JButton removeButton = new JButton("Remove");
         JLabel resultLabel = new JLabel(" Result ");
+        JButton exitButton = new JButton("Exit");
         btnPanel.add(new JLabel(" Value: "));
         btnPanel.add(valueField);
         btnPanel.add(addButton);
@@ -47,6 +48,7 @@ public class SwingCollections extends JFrame {
         btnPanel.add(setButton);
         btnPanel.add(removeButton);
         btnPanel.add(resultLabel);
+        btnPanel.add(exitButton);
 
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -91,6 +93,8 @@ public class SwingCollections extends JFrame {
                 canvas.repaint();
             }
         });
+
+        exitButton.addActionListener(e -> System.exit(0));
 
         add(canvas, BorderLayout.CENTER);
         add(BorderLayout.SOUTH, btnPanel);
