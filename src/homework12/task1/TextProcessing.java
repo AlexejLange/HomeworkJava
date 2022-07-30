@@ -5,26 +5,34 @@ import java.util.*;
 public class TextProcessing {
     public static void main(String[] args) {
 
-        String text = "Graffiti is a controversial subject. " +
-                "In most countries, marking or painting property without permission is " +
-                "considered by property owners and civic authorities as defacement and vandalism," +
-                " which is a punishable crime, citing the use of graffiti by street gangs to mark " +
-                "territory or to serve as an indicator of gang related activities.";
-        Set<String> wordsSet = new TreeSet<>(Arrays.asList(getWordsArray(text)));
-        System.out.println(wordsSet);
+        String text = "Прародителем текста-рыбы является известный 'Lorem Ipsum' —латинский текст," +
+                " ноги которого растут до нашей эры. Сервисов по созданию случайного " +
+                "текста на основе Lorem Ipsum великое множество, однако все они имеют один существенный" +
+                " недостаток: их 'рыба текст' подходит лишь для англоязычных ресурсов и проектов. Мы же," +
+                " фактически, предлагаем Lorem Ipsum на русском языке —вы можете использовать полученный" +
+                " здесь контент абсолютно бесплатно и в любых целях, не запрещённых законодательством.";
 
-        Map<String, Integer> wordsMap = new TreeMap<>();
-        /*for (String word : getWordsArray(text)) {
-
-            if (wordsMap.containsKey(word)) {
-                wordsMap.replace(word,);
-            }
-        }*/
-        System.out.println(wordsMap);
+        System.out.println(getUniqueWordList(getWordsArray(text)));
+        System.out.println(getWordListAndQuantity(getWordsArray(text)));
     }
 
     public static String[] getWordsArray(String text) {
         return text.replaceAll("[^ A-Za-zА-Яа-я]", "").toLowerCase().split(" ");
     }
 
+    public static Set<String> getUniqueWordList (String[] wordsArray) {
+        return new TreeSet<>(Arrays.asList(wordsArray));
+    }
+
+    public static Map<String, Integer> getWordListAndQuantity (String[] wordsArray) {
+        Map<String, Integer> wordsMap = new TreeMap<>();
+        for (String word : wordsArray) {
+            if (wordsMap.containsKey(word)) {
+                wordsMap.put(word, wordsMap.get(word) + 1);
+            } else {
+                wordsMap.put(word, 1);
+            }
+        }
+        return wordsMap;
+    }
 }
