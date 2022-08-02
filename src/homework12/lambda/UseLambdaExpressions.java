@@ -1,5 +1,11 @@
 package homework12.lambda;
 
+/**
+ * Java Pro. Homework #10
+ * @author Alexej Lange
+ * @version 27 Jul 2022
+ */
+
 import java.util.function.BinaryOperator;
 import java.util.function.UnaryOperator;
 

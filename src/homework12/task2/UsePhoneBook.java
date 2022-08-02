@@ -1,8 +1,10 @@
 package homework12.task2;
 
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
+/**
+ * Java Pro. Homework #12
+ * @author Alexej Lange
+ * @version 31 Jul 2022
+ */
 
 public class UsePhoneBook {
     public static void main(String[] args) {
