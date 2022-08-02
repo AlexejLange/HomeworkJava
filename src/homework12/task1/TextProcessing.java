@@ -3,7 +3,7 @@ package homework12.task1;
 /**
  * Java Pro. Homework #12
  * @author Alexej Lange
- * @version 30 Jul 2022
+ * @version 31 Jul 2022
  */
 
 import java.util.*;

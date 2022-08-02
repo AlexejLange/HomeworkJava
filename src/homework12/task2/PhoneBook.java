@@ -28,7 +28,7 @@ public class PhoneBook {
 
     @Override
     public String toString() {
-        return "PhoneBook{" +
+        return "PhoneBook {" +
                     "contacts=" + contacts +
                     '}';
     }
