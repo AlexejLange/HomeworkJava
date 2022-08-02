@@ -27,11 +27,8 @@ public class TextProcessing {
     public static Map<String, Integer> getWordListAndQuantity (String[] wordsArray) {
         Map<String, Integer> wordsMap = new TreeMap<>();
         for (String word : wordsArray) {
-            if (wordsMap.containsKey(word)) {
-                wordsMap.put(word, wordsMap.get(word) + 1);
-            } else {
-                wordsMap.put(word, 1);
-            }
+            Integer counter = wordsMap.getOrDefault(word, 0);
+            wordsMap.put(word, counter + 1);
         }
         return wordsMap;
     }

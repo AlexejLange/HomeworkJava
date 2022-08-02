@@ -13,17 +13,13 @@ public class PhoneBook {
     }
 
     public void addContacts(String name, String phone) {
-        if (!contacts.containsKey(name)) {
-            HashSet<String> phones = new HashSet<>();
-            phones.add(phone);
-            contacts.put(name,phones);
-        } else {
-            getContacts(name).add(phone);
-        }
+        HashSet<String> phones = contacts.getOrDefault(name,new HashSet<>());
+        phones.add(phone);
+        contacts.put(name,phones);
     }
 
     public HashSet<String> getContacts(String name) {
-        return contacts.get(name);
+        return contacts.getOrDefault(name, new HashSet<>());
     }
 
     @Override
