@@ -11,6 +11,8 @@ import homework11.InitDatabase;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class StreamEmployees {
@@ -48,5 +50,20 @@ public class StreamEmployees {
                 .map(employ -> employ.getPosition().toLowerCase())
                 .collect(Collectors.toSet());
         System.out.println(employeePosition);
+
+//        создание карты имя => сотрудник
+        Map<String,ComparatorEmployee> employeeMap = employees.stream()
+                .collect(Collectors.toMap(employ -> employ.getName(), employ -> employ));
+        System.out.println(employeeMap);
+
+//        создание карты позиция => список сотрудников
+        Map<String, Set<String>> positionMap = employees.stream()
+                .collect(Collectors.groupingBy(
+                        employ -> employ.getPosition(),
+                        Collectors.mapping(employ -> employ.getName(), Collectors.toSet())
+                ));
+        System.out.println(positionMap);
     }
+
+
 }
