@@ -1,10 +1,17 @@
 package homework13;
 
+/**
+ * Java Pro. Homework #13
+ * @author Alexej Lange
+ * @version 03 Aug 2022
+ */
+
 import homework11.ComparatorEmployee;
 import homework11.InitDatabase;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.stream.Collectors;
 
 public class StreamEmployees {
     public static void main(String[] args) {
@@ -22,8 +29,24 @@ public class StreamEmployees {
 
         long counter = employees.stream()
                 .filter(employee -> employee.getPosition().equals("engineer"))
-                    .count();
-
+                .count();
         System.out.println(counter);
+
+        Collection<ComparatorEmployee> employee = employees.stream()
+//                .filter(position -> position.getPosition().equals("engineer"))
+                .filter(employ -> employ.getAge() > 40)
+                .collect(Collectors.toList());
+        System.out.println(employee);
+
+        Collection<String> employeeNames = employees.stream()
+                .filter(employ -> employ.getAge() > 40)
+                .map(employ -> employ.getName().toUpperCase())
+                .collect(Collectors.toList());
+        System.out.println(employeeNames);
+
+        Collection<String> employeePosition = employees.stream()
+                .map(employ -> employ.getPosition().toLowerCase())
+                .collect(Collectors.toSet());
+        System.out.println(employeePosition);
     }
 }
