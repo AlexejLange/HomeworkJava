@@ -2,6 +2,6 @@ package homework14;
 
 public class MyArrayDataException extends Exception {
     public MyArrayDataException(int row, int column) {
-        super(String.format("Data in the cell [%d, %d] cannot be converted.", row + 1, column + 1));
+        super(String.format("Data in the %dth row and %dth column cannot be converted.", row + 1, column + 1));
     }
 }
