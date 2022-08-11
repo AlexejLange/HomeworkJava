@@ -3,7 +3,7 @@ package homework15;
 import java.io.Serializable;
 
 public class CatSerializable implements Serializable {
-    private String name;
+    private final String name;
 
     public CatSerializable(String name) {
         this.name = name;
