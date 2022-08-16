@@ -1,5 +1,11 @@
 package homework15;
 
+/**
+ * Java Pro. Homework #15
+ * @author Alexej Lange
+ * @version 15 Aug 2022
+ */
+
 import java.io.File;
 
 public class FileExample {
