@@ -13,9 +13,7 @@ public class ThreadHomework {
 
     public static void firstMethod() {
         float[] array = new float[SIZE];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = 1.0f;
-        }
+        Arrays.fill(array, 1.0f);
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < array.length; i++) {
             array[i] = (float) (array[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
@@ -25,9 +23,7 @@ public class ThreadHomework {
 
     public static void secondMethod() {
         float[] startArray = new float[SIZE];
-        for (int i = 0; i < startArray.length; i++) {
-            startArray[i] = 1.0f;
-        }
+        Arrays.fill(startArray, 1.0f);
         long startTime = System.currentTimeMillis();
         float[] leftArray = new float[HALF];
         float[] rightArray = new float[HALF];
@@ -40,7 +36,7 @@ public class ThreadHomework {
         });
         Thread thread2 = new Thread(() -> {
             for (int i = 0; i < rightArray.length; i++) {
-                rightArray[i] = (float) (rightArray[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+                rightArray[i] = (float) (rightArray[i] * Math.sin(0.2f + (i+HALF) / 5) * Math.cos(0.2f + (i+HALF) / 5) * Math.cos(0.4f + (i+HALF) / 2));
             }
         });
         thread1.start();
@@ -50,6 +46,5 @@ public class ThreadHomework {
         System.arraycopy(rightArray, 0, finishArray, HALF, HALF);
         System.out.println("Two thread time: " + (System.currentTimeMillis() - startTime) + " ms.");
     }
-
 }
 
