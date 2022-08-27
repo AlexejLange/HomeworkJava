@@ -1,7 +1,23 @@
 package homework20.practictask;
 
+/**
+ * Java Pro. Homework #20
+ * @author Alexej Lange
+ * @version 27 Aug 2022
+ */
+
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Race {
-    public static final int CARS_COUNT = 4;
+    public static final int CARS_COUNT = 6;
+    public static final CyclicBarrier START = new CyclicBarrier(CARS_COUNT + 1);
+    public static final CountDownLatch FINISH = new CountDownLatch(CARS_COUNT);
+    public static final Semaphore SEMAPHORE = new Semaphore(2, true);
+    public static final Lock LOCK = new ReentrantLock();
 
     public static void main(String[] args) {
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Подготовка!!!");
@@ -10,10 +26,21 @@ public class Race {
         for (int i = 0; i < cars.length; i++) {
             cars[i] = new Car(race, 20 + (int) (Math.random() * 10));
         }
-        for (int i = 0; i < cars.length; i++) {
-            new Thread(cars[i]).start();
+        for (Car car : cars) {
+            new Thread(car).start();
+        }
+        try {
+            START.await();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
-        System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
+        try {
+            FINISH.await();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
+        }
     }
 }

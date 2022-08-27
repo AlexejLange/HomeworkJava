@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Track {
-    private ArrayList<Stage> stages;
+    private final ArrayList<Stage> stages;
 
-    public Track(Stage... stages) {
+    protected Track(Stage... stages) {
         this.stages = new ArrayList<>(Arrays.asList(stages));
     }
 
