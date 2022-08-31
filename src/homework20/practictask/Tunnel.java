@@ -5,8 +5,8 @@ import static homework20.practictask.Race.SEMAPHORE;
 
 
 public class Tunnel extends Stage {
-    protected Tunnel() {
-        this.length = 80;
+    protected Tunnel(int length) {
+        this.length = length;
         this.description = "Тоннель " + length + " метров";
     }
     @Override
