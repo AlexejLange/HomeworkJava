@@ -15,10 +15,9 @@ public class EchoClient {
     public EchoClient() {
         String message;
         try (Socket socket = new Socket("localhost", 2048);
-             PrintWriter writer = new PrintWriter(socket.getOutputStream())
-//             ;
-//             BufferedReader reader =
-//                new BufferedReader(new InputStreamReader(socket.getInputStream()))
+             PrintWriter writer = new PrintWriter(socket.getOutputStream());
+             BufferedReader reader =
+                new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ){
             System.out.println("Connection to server...");
             Scanner scanner = new Scanner(System.in);
@@ -26,7 +25,7 @@ public class EchoClient {
                 message = scanner.nextLine();
                 writer.println(message);
                 writer.flush();
-//                System.out.println(reader.readLine());
+                System.out.println(reader.readLine());
             } while (!message.equals("exit"));
         } catch (IOException ex) {
             ex.printStackTrace();

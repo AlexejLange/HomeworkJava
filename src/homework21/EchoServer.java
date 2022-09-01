@@ -27,6 +27,7 @@ public class EchoServer {
                 do {
                     message = reader.readLine();
                     writer.println("Echo: " + message);
+                    writer.flush();
                     System.out.println("Client: " + message);
                 } while (!message.equals("exit"));
                 writer.close();
