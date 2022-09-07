@@ -12,6 +12,8 @@ import java.util.List;
 public class ChatServer {
     public static final int SERVER_PORT = 2048;
     public static final String EXIT_COMMAND = "/exit";
+    public static final String RENAME_COMMAND = "/rename";
+    public static final String WHO_COMMAND = "/who";
 
     private final List<ClientHandler> clients;
 
@@ -50,7 +52,7 @@ public class ChatServer {
         private BufferedReader reader;
         private PrintWriter writer;
         private final Socket socket;
-        private final String name;
+        private String name;
 
         public ClientHandler(Socket socket, String name) {
             this.socket = socket;
@@ -75,10 +77,26 @@ public class ChatServer {
         @Override
         public void run() {
             String message;
+            String[] commands;
+
             try {
                 do {
                     message = reader.readLine();
-                    if (message.equalsIgnoreCase(EXIT_COMMAND)) {
+                    commands = message.split(" ", 2);
+                    if (commands[0].equalsIgnoreCase(EXIT_COMMAND)) {
+                        send(message);
+                    }
+                    if (commands[0].equalsIgnoreCase(RENAME_COMMAND)) {
+                        send(message);
+                        message = name + " renamed to: " + commands[1];
+                        name = commands[1];
+                    }
+                    if (commands[0].equalsIgnoreCase(WHO_COMMAND)) {
+                        StringBuilder chatList = new StringBuilder("Chat list:\n");
+                        for (ClientHandler client : clients) {
+                            chatList.append(client.getName()).append("\n");
+                        }
+                        message = chatList.toString();
                         send(message);
                     }
                     sendToAll(name, message);
